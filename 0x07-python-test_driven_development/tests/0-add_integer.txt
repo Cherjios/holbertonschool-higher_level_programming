@@ -1,111 +1,113 @@
-Module for ``0-add_integer``
-==============================
-This is a doctest file to test the above module
-====================
- Usage instructions
-====================
+The ``0-add_integer`` module
+============================
 
-Import ``add_integer`` from the ``0-add_integer`` module:
+Using ``add_integer``
+---------------------
 
-	>>> add_integer = __import__('0-add_integer').add_integer
+Import function from module:
 
-Now use it:
+    >>> add_integer = __import__('0-add_integer').add_integer
 
-	>>> add_integer(1, 2)
-	3
+Test one int argument:
 
-This function works with integers:
+    >>> add_integer(2)
+    100
 
-	>>> add_integer(24, 42)
-  	66
-  	>>> add_integer(-24, 42)
-  	18
-  	>>> add_integer(-24, -42)
-  	-66
+Test one int argument and check default second:
 
-This function works with floats: 
+    >>> add_integer(0)
+    98
 
-  	>>> add_integer(2.4, 4.2)
-  	6
-  	>>> add_integer(-24, 4.2)
-  	-20
+Test one float:
 
-	In the event that arguments are floats, they are cast as integers before addition operation:
+    >>> add_integer(123.9)
+    221
 
-  	>>> add_integer(2.456, 4.21)
-  	6
-   	>>> add_integer(-24.68, 4.242)
-  	-20
+Test one negative float:
 
-  This function requires 2 arguments
-  No more than 2 arguments:
+    >>> add_integer(-95.5)
+    3
 
-  	>>> add_integer(2, 4, 6)
-  	Traceback (most recent call last):
-  	...
-  	TypeError: add_integer() takes 2 positional arguments but 3 were given
+Test two integers:
 
-  No less than 2 arguments:
+    >>> add_integer(10, 5)
+    15
 
-  	>>> add_integer(1)
-  	Traceback (most recent call last):
- 	 ...
- 	TypeError: add_integer() missing 1 required positional argument: 'b'
+Test two big integers:
 
- 	Test present: integer casting
- 	input float and int reversed
- 	>>> add_integer(8, 5.0)
- 	13
+    >>> add_integer(999999998, 999999999)
+    1999999997
 
-  	input float and int
-  	>>> add_integer(8.0, 5)
-  	13
+Test positive, negative integers:
 
- 	input bool and int
-  	>>> add_integer(True, 45)
-  	46
+    >>> add_integer(34263478, -89234582395)
+    -89200318917
 
- 	input bool and bool
-  	>>> add_integer(False, True)
-  	1
+Test negative, positive integers:
 
- 	Test present: check type input string and int
-  	>>> add_integer('hi', 6)
-  	Traceback (most recent call last):
-  	...
-  	TypeError: a must be an integer
+    >>> add_integer(-13947692, 57234)
+    -13890458
 
- 	input int and string reversed
-  	>>> add_integer(6, 'yo')
-  	Traceback (most recent call last):
-  	...
-  	TypeError: b must be an integer
+Test an integer and a float:
 
- 	input None
-  	>>> add_integer(None, None)
-  	Traceback (most recent call last):
-  	...
-  	TypeError: a must be an integer
+    >>> add_integer(123, 7.987)
+    130
 
- 	input list and int
-  	>>> add_integer([1, 2, 3], 7)
-  	Traceback (most recent call last):
-  	...
-	TypeError: a must be an integer
+Test a float and an integer:
 
- 	input large number
-	 >>> add_integer(999999999999, 1)
-	 1000000000000
+    >>> add_integer(234234.43545, 4352345)
+    4586579
 
-	 no arguments
- 	>>> add_integer()
- 	Traceback (most recent call last):
-	 ...
-	 TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
+Test two floats:
 
-	 extra args
-	  >>> add_integer(6, 2, 4)
-	  Traceback (most recent call last):
-	  ...
-	  TypeError: add_integer() takes 2 positional arguments but 3 were given
+    >>> add_integer(0.9, 0.9)
+    0
+
+Add infinity:
+
+    >>> add_integer(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+Add nan:
+
+    >>> add_integer(0, float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+Test first arg invalid:
+
+    >>> add_integer("foo", 0)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Test second arg invalid:
+
+    >>> add_integer(123123, [])
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Test both args invalid:
+
+    >>> add_integer(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Test two strings:
+
+    >>> add_integer("foo", "bar")
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Test float overflow:
+    >>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
 
