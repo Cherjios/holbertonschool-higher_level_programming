@@ -5,7 +5,8 @@
 def matrix_divided(matrix, div):
     """Divides all elements of a matrix
 
-    Matrix must be a list of lists of itegers or float, otherwise raise a TypeError
+    Matrix must be a list of lists of itegers or float,
+    otherwise raise a TypeErrori
     Divides all elements of matrix by div.
     Args:
         matrix: List of lists containing int or float
@@ -38,5 +39,3 @@ def matrix_divided(matrix, div):
 if __name__ == "__main__":
     import doctest
     doctest.testfile("tests/2-matrix_divided.txt")
-
-
