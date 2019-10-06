@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Function that  prints a text with 2 lines after finding this characters .: ?"""
+"""Function that  prints a text with 2 lines after
+   finding this characters .: ?"""
 
 
 def text_indentation(text):
@@ -21,4 +22,4 @@ def text_indentation(text):
 
 if __name__ == "__main__":
     import doctest
-    doctest.testfile("tests/5-text_indentation.txt") 
+    doctest.testfile("tests/5-text_indentation.txt")
