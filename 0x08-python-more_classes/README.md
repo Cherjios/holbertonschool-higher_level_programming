@@ -89,6 +89,7 @@ repr() should return a string representation of the rectangle to be able to recr
 You are not allowed to import any module
 
 5. Detect instance deletion mandatory
+
 Write a class Rectangle that defines a rectangle by: (based on 4-rectangle.py)
 
 Private instance attribute: width:
