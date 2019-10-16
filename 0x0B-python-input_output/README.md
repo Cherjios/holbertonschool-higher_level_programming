@@ -1,5 +1,5 @@
 0x0B. Python - Input/Output
-
+___________________________
 0. Read file mandatory
 
 Write a function that reads a text file (UTF8) and prints it to stdout:
