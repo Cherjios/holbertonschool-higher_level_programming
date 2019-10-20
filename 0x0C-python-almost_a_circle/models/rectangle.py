@@ -79,9 +79,16 @@ class Rectangle(Base):
 
     def display(self):
         """Returns string representation of rectangle with ##"""
-        if not self.width or not self.height:
-            return ""
+        for i in range(self.__y):
+            print()
         for i in range(self.height):
+            for i in range(self.__x):
+                print(" ", end="")
             for i in range(self.width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """String method"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+               self.id, self.__x, self.__y, self.__width, self.__height)
