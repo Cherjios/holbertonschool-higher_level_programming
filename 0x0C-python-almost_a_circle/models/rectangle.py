@@ -7,6 +7,8 @@ from models.base import Base
 class Rectangle(Base):
     """Defining class Reactangle"""
 
+    print_symbol = "#"
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializing Reactangle"""
         super().__init__(id)
@@ -70,3 +72,16 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """" Returns the area of the rectangle"""
+        return(self.width * self.height)
+
+    def display(self):
+        """Returns string representation of rectangle with ##"""
+        if not self.width or not self.height:
+            return ""
+        for i in range(self.height):
+            for i in range(self.width):
+                print("#", end="")
+            print()
