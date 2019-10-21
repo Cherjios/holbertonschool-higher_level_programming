@@ -3,11 +3,11 @@
 
 from models.base import Base
 
+import sys
+
 
 class Rectangle(Base):
     """Defining class Reactangle"""
-
-    print_symbol = "#"
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializing Reactangle"""
@@ -92,3 +92,11 @@ class Rectangle(Base):
         """String method"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        """Assigning arguments"""
+        if args:
+            data = ["id", "width", "height", "x", "y"]
+            for num, elem in enumerate(args):
+                setattr(self, data[num], elem)
+            return
