@@ -62,3 +62,42 @@ class Base:
         for i in dicts:
             list_int.append(cls.create(**i))
         return list_int
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes in CSV."""
+        if type(list_objs) != list and list_objs is not None \
+                or not all(isinstance(x, cls) for x in list_objs):
+            raise TypeError("list_objs must be a list")
+        filename = "{}.csv".format(cls.__name__)
+        with open(filename, "w") as f:
+            if list_objs is not None:
+                list_objs = [x.to_dictionary() for x in list_objs]
+                rec_fields = ['id', 'width', 'height', 'x', 'y']
+                squ_fields = ['id', 'size', 'x', 'y']
+                if cls.__name__ == "Rectangle":
+                    writer = csv.DictWriter(f, fieldnames=rec_fields)
+                else:
+                    writer = csv.DictWriter(f, fieldnames=squ_fields)
+                writer.writeheader()
+                writer.writerows(list_objs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes in CSV."""
+        filename = "{}.csv".format(cls.__name__)
+        rec_header = ["id", "width", "height", "x", "y"]
+        squ_header = ["id", "size", "x", "y"]
+        header = rec_header if cls.__name__ == "Rectangle" else squ_header
+        res = []
+        if os.path.exists(filename):
+            with open(filename, "r") as f:
+                reader = csv.reader(f, delimiter=',')
+                for i, row in enumerate(reader):
+                    if i > 0:
+                        new = cls(1, 1)
+                        for j, e in enumerate(row):
+                            if e:
+                                setattr(new, header[j], int(e))
+                        res.append(new)
+        return res
