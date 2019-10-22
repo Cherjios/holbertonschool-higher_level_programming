@@ -23,14 +23,24 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.id, 1)
         self.assertEqual(r2.id, 2)
         self.assertEqual(r3.id, 12)
-        
-    def tearDown(self):
-        if os.path.exists("Base.json"):
-            os.remove("Base.json")
-        if os.path.exists("Rectangle.json"):
-            os.remove("Rectangle.json")
-        if os.path.exists("Square.json"):
-            os.remove("Square.json")
+
+    """
+    def test01_vali_setter(self):
+        Test to validate setter
+        r1 = Rectangle(10, "2")
+        r2 = Rectangle(10, -2)
+        r3 = Rectangle(-10, 5)
+        self.assertEqual(r1.height(),"[TypeError] height must be an integer")
+        """
+
+    def test02_area(self):
+        """Test to return the area"""
+        r1 = Rectangle(5, 5)
+        r2 = Rectangle(20, 10)
+        r3 = Rectangle(9, 7, 0, 0, 12)
+        self.assertEqual(r1.area(), 25)
+        self.assertEqual(r2.area(), 200)
+        self.assertEqual(r3.area(), 63)
 
 if __name__ == '__main__':
     unittest.main()

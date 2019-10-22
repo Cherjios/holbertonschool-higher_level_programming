@@ -52,13 +52,12 @@ class Base:
         """1.- Create the file name, 2.- if path file no exits return []
            3.- open the file name, 4.- loop through the file
            5.- return list of ints"""
-        filename="{}.json".format(cls.__name__)
+        filename = "{}.json".format(cls.__name__)
         if not os.path.exists(filename):
             return []
-        list_int= []
+        list_int = []
         with open(filename, "r") as f:
             dicts = cls.from_json_string(f.readline())
         for i in dicts:
             list_int.append(cls.create(**i))
         return list_int
-

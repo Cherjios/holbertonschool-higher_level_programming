@@ -16,8 +16,8 @@ class TestBase(unittest.TestCase):
     def test00_id(self):
         """Test for id empty."""
         b1 = Base()
-        self.assertEqual(b1.id,1)
-    
+        self.assertEqual(b1.id, 1)
+
     def test01_id(self):
         """Test for correct id attribute."""
         b1 = Base(1)
@@ -56,7 +56,30 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b2.id, 0.55)
         self.assertEqual(b3.id, -.25)
 
+    def test_one_argument(self):
+        """ test a base with 1 argument """
+        b = Base(100)
+        self.assertEqual(b.id, 100)
 
+    def test_two_arguments(self):
+        with self.assertRaises(TypeError):
+            b = Base(1, 2)
+
+    def test_dict_to_json_none(self):
+        """ test dict to json none """
+        self.assertEqual(Base.to_json_string(None), '[]')
+
+    def test_dict_to_json_empty(self):
+        """ test empty dict to  json """
+        self.assertEqual(Base.to_json_string([]), '[]')
+
+    def test_dict_from_json_none(self):
+        """ test dict to json none """
+        self.assertEqual(Base.from_json_string(None), [])
+
+    def test_dict_from_json_empty(self):
+        """ test empty dict to  json """
+        self.assertEqual(Base.from_json_string(""), [])
 
 if __name__ == '__main__':
     unittest.main()
