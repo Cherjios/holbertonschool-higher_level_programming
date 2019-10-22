@@ -20,17 +20,17 @@ class TestRectangle(unittest.TestCase):
         """Test for empty id"""
         r1 = Rectangle(10, 2)
         r2 = Rectangle(2, 10)
-        self.assertEqual(r1.id, 1)
-        self.assertEqual(r2.id, 2)
+        self.assertEqual(r1.id, 2)
+        self.assertEqual(r2.id, 3)
   
-    def test00_id(self):
+    def test01_id(self):
         """Test for given int id"""
         r1 = Rectangle(10, 2, 0, 0, 5)
         r2 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r1.id, 5)
         self.assertEqual(r2.id, 12)
 
-    def test00_id(self):
+    def test02_id(self):
         """Test for given sti id"""
         r1 = Rectangle(10, 2, 0, 0, "A5")
         r2 = Rectangle(10, 2, 0, 0, "B12")

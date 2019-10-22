@@ -22,7 +22,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(type(s1), Square)
         self.assertEqual(type(s2), Square)
         self.assertEqual(type(s3), Square)
-   
+
     def test00_vali_setter_size(self):
         """Test to validate setter size"""
         with self.assertRaises(TypeError):
