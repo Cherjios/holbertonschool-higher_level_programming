@@ -32,11 +32,11 @@ class TestSquare(unittest.TestCase):
         """Test to validate setter size"""
         with self.assertRaises(ValueError):
             s1 = Square(-2)
-    
+
     def test00_vali_setter_x(self):
         """Test to validate setter x"""
         with self.assertRaises(TypeError):
-            s1 = Square(2,"2")
+            s1 = Square(2, "2")
 
     def test01_vali_setter_x(self):
         """Test to validate setter x"""
@@ -46,12 +46,12 @@ class TestSquare(unittest.TestCase):
     def test00_vali_setter_y(self):
         """Test to validate setter y"""
         with self.assertRaises(TypeError):
-            s1 = Square(2, 3,"2")
+            s1 = Square(2, 3, "2")
 
     def test01_vali_setter_x(self):
         """Test to validate setter y"""
         with self.assertRaises(ValueError):
-            s1 = Square(2, 8,-2)
+            s1 = Square(2, 8, -2)
 
     def test_inheritance_from_Rectangle(self):
         """ Check inheritance from rectangle """
@@ -69,8 +69,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.area(), 9)
         self.assertEqual(s2.area(), 4)
         self.assertEqual(s3.area(), 25)
-
-
 
 if __name__ == '__main__':
     unittest.main()

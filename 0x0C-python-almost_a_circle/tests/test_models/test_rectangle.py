@@ -22,7 +22,7 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(2, 10)
         self.assertEqual(r1.id, 2)
         self.assertEqual(r2.id, 3)
-  
+
     def test01_id(self):
         """Test for given int id"""
         r1 = Rectangle(10, 2, 0, 0, 5)
@@ -72,7 +72,7 @@ class TestRectangle(unittest.TestCase):
     def test02_vali_setter_y(self):
         with self.assertRaises(ValueError):
             r2 = Rectangle(10, 2, 2, -5)
-          
+
     def test_Rectangle_area(self):
         """Test to return the area"""
         r1 = Rectangle(5, 5)
@@ -82,10 +82,9 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.area(), 200)
         self.assertEqual(r3.area(), 63)
 
-
     def test_inheritance_from_Base(self):
         """ Check inheritance from square """
         self.assertTrue(issubclass(Rectangle, Base))
-    
+
 if __name__ == '__main__':
     unittest.main()
