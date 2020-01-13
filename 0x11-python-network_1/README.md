@@ -118,15 +118,3 @@ The second argument will be your password
 You must use the package requests and sys
 You are not allowed to import packages other than requests and sys
 You don’t need to check arguments passed to the script (number or type)
-guillaume@ubuntu:~/0x11$ ./10-my_github.py papamuziko cisfun
-2531536
-guillaume@ubuntu:~/0x11$ ./10-my_github.py papamuziko wrong_pwd
-None
-guillaume@ubuntu:~/0x11$ 
-Repo:
-
-GitHub repository: holbertonschool-higher_level_programming
-Directory: 0x11-python-network_1
-File: 10-my_github.py
-Check your code?
-Done with the mandatory tasks? Unlock 4 advanced tasks now
