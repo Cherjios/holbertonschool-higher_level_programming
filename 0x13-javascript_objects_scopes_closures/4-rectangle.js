@@ -30,7 +30,7 @@ class Rectangle {
   // Method double()
   double () {
     this.width *= 2;
-    this.heiht *= 2;
+    this.height *= 2;
   }
 }
 
