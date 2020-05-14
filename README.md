@@ -6,5 +6,5 @@
 1. [0x01-python-if_else_loops_functions](https://github.com/Cherjios/holbertonschool-higher_level_programming/tree/master/0x01-python-if_else_loops_functions) - Loops and Conditionals
 2. [0x02-python-import_modules](https://github.com/Cherjios/holbertonschool-higher_level_programming/tree/master/0x02-python-import_modules) - Creating and Importing modules.
 3. [0x03-python-data_structures](https://github.com/Cherjios/holbertonschool-higher_level_programming/tree/master/0x03-python-data_structures) - List and Tuples 
- 
+4. [0x04-python-more_data_structures](https://github.com/Cherjios/holbertonschool-higher_level_programming/tree/master/0x04-python-more_data_structures) - Sets, dictionaries, lambda expressions 
 
