@@ -10,17 +10,14 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    arg = ""
-    if len(argv) == 2:
-        arg = argv[1]
-    try:
-        r = requests.get('https://swapi.co/api/people/?search={}'.format(arg))
-        j = r.json()
-        if j:
-            print('Number of results:', j['count'])
-            for i in j.get('results'):
-                print(i.get('name'))
+    data = {'q': ""}
+    if len(argv) > 1:
+        data['q'] = argv[1]
+    r = requests.post("http://0.0.0.0:5000/search_user", data)
+    if "json" not in r.headers.get('content-type'):
+        print("Not a valid JSON")
+    else:
+        if r.json():
+            print("[{}] {}".format(r.json().get('id'), r.json().get('name')))
         else:
-            print('No result')
-    except ValueError:
-        print('Not a valid JSON')
+            print("No result")
