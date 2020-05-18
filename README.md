@@ -20,6 +20,9 @@
 15. [0x15-javascript-web_jquery](https://github.com/Cherjios/holbertonschool-higher_level_programming/tree/master/0x15-javascript-web_jquery)
 16. [0x0A-python-inheritance](https://github.com/Cherjios/holbertonschool-higher_level_programming/tree/master/0x0A-python-inheritance)
 17. [0x0B-python-input_output](https://github.com/Cherjios/holbertonschool-higher_level_programming/tree/master/0x0B-python-input_output)
+18. [0x0C-python-almost_a_circle](0x0C-python-almost_a_circle)
+19. [0x0D-SQL_introduction](https://github.com/Cherjios/holbertonschool-higher_level_programming/tree/master/0x0D-SQL_introduction)
+20. [0x0F-python-object_relational_mappin](https://github.com/Cherjios/holbertonschool-higher_level_programming/tree/master/0x0F-python-object_relational_mapping)
 
 
 ### By Sergio Lopez 
